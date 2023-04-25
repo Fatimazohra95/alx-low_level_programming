@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- *jack_bauer - Prints the minute of a day
+ *jack_baver - Prints the minute of a day
  *
  *Return: no return
  */
-void jack_bauer(void)
+void jack_baver(void)
 {
 	int a, b, c, d;
 
