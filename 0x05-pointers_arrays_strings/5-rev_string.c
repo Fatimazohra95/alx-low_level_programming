@@ -1,9 +1,8 @@
 #include "main.h"
 /**
- *puts2 - function should print only one character out of two
- *starting with the first one
- *@str: input
- *Return: print
+ *rev_string - Reverses a string
+ *@str: the string to be modified
+ *Return: void
  */
 void puts2(char *str)
 {
