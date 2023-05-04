@@ -2,35 +2,32 @@
 #include <stdio.h>
 
 /**
- *cap_string - Capitalizes all words of a string
- *@str: The string to be capitalized.
- *Return: char value
- */
-char *cap_string(char *str)
+  *cap_string - Capitalizez all the worlds
+  *@s: The string
+  *
+  *Return: char value
+  */
+char *cap_string(char *s)
 {
-int i = 0;
+int a = 0, i;
+int cspc = 13;
+char spc[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
 
-while (str[i])
+while (s[a])
 {
-while (!(str[i] >= 'a' && str[i] <= 'z'))
-i++;
-if (str[i - 1] == ' ' ||
-str[i - 1] == '\t' ||
-str[i - 1] == '\n' ||
-str[i - 1] == ',' ||
-str[i - 1] == ';' ||
-str[i - 1] == '-' ||
-str[i - 1] == '!' ||
-str[i - 1] == '?' ||
-str[i - 1] == '"' ||
-str[i - 1] == '(' ||
-str[i - 1] == ')' ||
-str[i - 1] == '{' ||
-str[i - 1] == '}' ||
-i == 0)
-str[i] -= 32;
+i = 0;
+
+while (i < cspc)
+{
+if ((a == 0 || s[a - 1] == spc[i]) && (s[a] >= 97 && s[a] <= 122))
+s[a] -= 32;
+
 i++;
 }
-return (str);
+
+a++;
+}
+
+return (s);
 }
 
