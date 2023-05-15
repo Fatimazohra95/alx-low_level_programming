@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 /**
- *_alloc_grid - Print a grit of integers
- *@width: width of the grid
- *@height: height of the grid
+ *alloc_grid - nested loop to make grid of integers
+ *@width: width input
+ *@height: height input
  *
- *Return: Nothing
+ *Return: pointer to 2 dim. array
  */
 
-int **_alloc_grid(int width, int height)
+int **alloc_grid(int width, int height)
 {
 int i, j, k, l;
 int **a;
