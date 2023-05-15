@@ -1,10 +1,11 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- *argstostr - main entry
- *@ac: int input
- *@av: double pointer array
+ *argstostr - convert the params pased to the program
+ *@ac: the agrmt count
+ *@av: the argmt vector
  *
  *Return: 0
  */
@@ -12,16 +13,44 @@
 char *argstostr(int ac, char **av)
 
 {
-int i, n, l = 0;
+int ch = 0, i = 0, j = 0, k = 0;
+char *s;
 
 
 if (ac == 0 || av == NULL)
 return (NULL);
 
-for (i = 0; i < ac; i++)
+while (i < ac)
 {
-for (n = 0; av[i][n]; n++)
-l++;
+while (av[i][j])
+{
+ch++;
+j++;
 }
-return (0);
+j = 0;
+i++;
+}
+s = malloc((sizeof(char) * ch) +ac + 1);
+
+
+i = 0;
+while (av[i])
+{
+while (av[i][j])
+{
+s[k] = av[i][j];
+k++;
+j++;
+}
+
+s[k] = '\n';
+
+j = 0;
+k++;
+i++;
+}
+
+k++;
+s[k] = '\0';
+return (s);
 }
